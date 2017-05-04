@@ -59,12 +59,27 @@ you must fill header with acces Token
 ```http
 Authorization: Bearer 5262d64b892e8d4341000001
 ```
-example to add cart:
+example to add cart with form:
 
 key | value
 ---- | -----------
 products[0][id]  | 1
 products[0][qty]  | 1
+
+
+
+you can add cart with json:
+```http
+{
+  "products": [
+    {
+      "id": 2,
+      "qty": 3
+    }
+  ]
+}
+```
+
 
 + Response 200 (aplication/json)
 
@@ -84,12 +99,24 @@ you must fill header with acces Token
 ```http
 Authorization: Bearer 5262d64b892e8d4341000001
 ```
-example to add cart:
+example to Update cart:
 
 key | value
 ---- | -----------
 products[0][id]  | 1
 products[0][qty]  | 1
+
+you can update cart with json:
+```http
+{
+  "products": [
+    {
+      "id": 2,
+      "qty": 3
+    }
+  ]
+}
+```
 
 + Response 200 (aplication/json)
 
@@ -109,7 +136,7 @@ you must fill header with acces Token
 ```http
 Authorization: Bearer 5262d64b892e8d4341000001
 ```
-example to add cart:
+example to Delete cart:
 
 key | value
 ---- | -----------

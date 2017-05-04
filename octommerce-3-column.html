@@ -620,7 +620,7 @@
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div><div class="middle"><div id="cart-cart-post" class="action post"><h4 class="action-heading"><div class="name">Add Cart</div><a href="#cart-cart-post" class="method post">POST</a><code class="uri">/api/v1/cart</code></h4><p>Add products to cart using id and quantity.</p>
 <p>you must fill header with acces Token</p>
 <pre><code class="language-http"><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer 5262d64b892e8d4341000001</span></code></pre>
-<p>example to add cart:</p>
+<p>example to add cart with form:</p>
 <table>
 <thead>
 <tr>
@@ -639,6 +639,15 @@
 </tr>
 </tbody>
 </table>
+<p>you can add cart with json:</p>
+<pre><code class="language-http">{
+  "products": [
+    {
+      "id": 2,
+      "qty": 3
+    }
+  ]
+}</code></pre>
 </div></div><hr class="split"><div class="right"><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.octommerce.com</span>/api/v1/cart</span></div><div class="tabs"><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">aplication/json</span><br><span class="hljs-attribute">X-Request-ID</span>: <span class="hljs-string">f72fc914</span><br><span class="hljs-attribute">X-Response-Time</span>: <span class="hljs-string">4ms</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -815,6 +824,15 @@
 </tr>
 </tbody>
 </table>
+<p>you can update cart with json:</p>
+<pre><code class="language-http">{
+  "products": [
+    {
+      "id": 2,
+      "qty": 3
+    }
+  ]
+}</code></pre>
 </div></div><hr class="split"><div class="right"><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname">https://api.octommerce.com</span>/api/v1/cart</span></div><div class="tabs"><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">aplication/json</span><br><span class="hljs-attribute">X-Request-ID</span>: <span class="hljs-string">f72fc914</span><br><span class="hljs-attribute">X-Response-Time</span>: <span class="hljs-string">4ms</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
