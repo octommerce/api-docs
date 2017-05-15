@@ -466,7 +466,7 @@
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="cart-cart-post" class="action post"><h4 class="action-heading"><div class="name">Add Cart</div><a href="#cart-cart-post" class="method post">POST</a><code class="uri">/api/v1/cart</code></h4><p>Add products to cart using id and quantity.</p>
 <p>you must fill header with acces Token</p>
 <pre><code class="language-http"><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer 5262d64b892e8d4341000001</span></code></pre>
-<p>example to add cart:</p>
+<p>example to add cart with form:</p>
 <table>
 <thead>
 <tr>
@@ -485,6 +485,15 @@
 </tr>
 </tbody>
 </table>
+<p>you can add cart with json:</p>
+<pre><code class="language-http">{
+  "products": [
+    {
+      "id": 2,
+      "qty": 3
+    }
+  ]
+}</code></pre>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.octommerce.com</span>/api/v1/cart</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">aplication/json</span><br><span class="hljs-attribute">X-Request-ID</span>: <span class="hljs-string">f72fc914</span><br><span class="hljs-attribute">X-Response-Time</span>: <span class="hljs-string">4ms</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -661,6 +670,15 @@
 </tr>
 </tbody>
 </table>
+<p>you can update cart with json:</p>
+<pre><code class="language-http">{
+  "products": [
+    {
+      "id": 2,
+      "qty": 3
+    }
+  ]
+}</code></pre>
 <h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.octommerce.com</span>/api/v1/cart</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">aplication/json</span><br><span class="hljs-attribute">X-Request-ID</span>: <span class="hljs-string">f72fc914</span><br><span class="hljs-attribute">X-Response-Time</span>: <span class="hljs-string">4ms</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -1033,161 +1051,79 @@
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="orders-orders-post" class="action post"><h4 class="action-heading"><div class="name">Add Order</div><a href="#orders-orders-post" class="method post">POST</a><code class="uri">/api/v1/orders</code></h4><p>Add order products.</p>
 <p>you must fill header with acces Token</p>
 <pre><code class="language-http"><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer 5262d64b892e8d4341000001</span></code></pre>
-<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.octommerce.com</span>/api/v1/orders</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">aplication/json</span><br><span class="hljs-attribute">X-Request-ID</span>: <span class="hljs-string">f72fc914</span><br><span class="hljs-attribute">X-Response-Time</span>: <span class="hljs-string">4ms</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
-  {
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-    "<span class="hljs-attribute">user_id</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
-    "<span class="hljs-attribute">total_price</span>": <span class="hljs-value"><span class="hljs-number">12000</span></span>,
-    "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2017/05/02 21:24:37"</span></span>,
-    "<span class="hljs-attribute">products</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">data</span>": <span class="hljs-value">[
-        {
-          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-          "<span class="hljs-attribute">sku</span>": <span class="hljs-value"><span class="hljs-number">123</span></span>,
-          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Kuku bima Energ i"</span></span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"minuman berenergi roso roso"</span></span>,
-          "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">12000</span></span>,
-          "<span class="hljs-attribute">sale_price</span>": <span class="hljs-value"><span class="hljs-string">"null"</span></span>,
-          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
-            {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">diskname</span>": <span class="hljs-value"><span class="hljs-string">"58ff29082e57e059107674.png"</span></span>,
-              "<span class="hljs-attribute">file_name</span>": <span class="hljs-value"><span class="hljs-string">"2.png"</span></span>,
-              "<span class="hljs-attribute">file_size</span>": <span class="hljs-value"><span class="hljs-number">9574</span></span>,
-              "<span class="hljs-attribute">content_type</span>": <span class="hljs-value"><span class="hljs-string">"image/png"</span></span>,
-              "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"null"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"null"</span></span>,
-              "<span class="hljs-attribute">field</span>": <span class="hljs-value"><span class="hljs-string">"images"</span></span>,
-              "<span class="hljs-attribute">sort_order</span>": <span class="hljs-value"><span class="hljs-number">6</span></span>,
-              "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2017/04/25 17:46:32"</span></span>,
-              "<span class="hljs-attribute">update_at</span>": <span class="hljs-value"><span class="hljs-string">"2017/04/25 19:48:14"</span></span>,
-              "<span class="hljs-attribute">path</span>": <span class="hljs-value"><span class="hljs-string">"http://api.octommerce.com/storage/app/uploads/public/58f/f29/082/58ff29082e57e059107674.png"</span></span>,
-              "<span class="hljs-attribute">extension</span>": <span class="hljs-value"><span class="hljs-string">"png"</span>
-            </span>}
-          ]
-        </span>}
-      ]
-    </span>}
-  </span>}
-]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
-  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">user_id</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">total_price</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-      </span>}</span>,
-      "<span class="hljs-attribute">products</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Unique identifier"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">sku</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Unique identifier"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Single line description"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Full description of the note which supports Markdown."</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Unique identifier"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">sale_price</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                  "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-                    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-                    "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                      "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Unique identifier"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">diskname</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">file_name</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">file_size</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">content_type</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">description</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">field</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">sort_order</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">update_at</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">path</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}</span>,
-                      "<span class="hljs-attribute">extension</span>": <span class="hljs-value">{
-                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
-                      </span>}
-                    </span>}</span>,
-                    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-                      <span class="hljs-string">"id"</span>
-                    ]
-                  </span>}
-                </span>}
-              </span>}</span>,
-              "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-                <span class="hljs-string">"id"</span>,
-                <span class="hljs-string">"sku"</span>,
-                <span class="hljs-string">"name"</span>,
-                <span class="hljs-string">"price"</span>
-              ]
-            </span>}
-          </span>}
-        </span>}
-      </span>}
-    </span>}</span>,
-    "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-      <span class="hljs-string">"id"</span>,
-      <span class="hljs-string">"user_id"</span>,
-      <span class="hljs-string">"total_price"</span>
-    ]
-  </span>}</span>,
-  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="orders-order-single" class="resource"><h3 class="resource-heading">Order single <a href="#orders-order-single" class="permalink">&nbsp;&para;</a></h3><div id="orders-order-single-get" class="action get"><h4 class="action-heading"><div class="name">Get single Order</div><a href="#orders-order-single-get" class="method get">GET</a><code class="uri">/api/v1/orders/id</code></h4><p>Get a single of Order.</p>
+<p>example to add orders with form:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shipping_name</td>
+<td>octommerce</td>
+</tr>
+<tr>
+<td>shipping_phone</td>
+<td>085813488273</td>
+</tr>
+<tr>
+<td>shipping_address</td>
+<td>street apron no 43</td>
+</tr>
+<tr>
+<td>shipping_city-id</td>
+<td>1</td>
+</tr>
+<tr>
+<td>shipping_state_id</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.octommerce.com</span>/api/v1/orders</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">aplication/json</span><br><span class="hljs-attribute">X-Request-ID</span>: <span class="hljs-string">f72fc914</span><br><span class="hljs-attribute">X-Response-Time</span>: <span class="hljs-string">4ms</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code><span class="hljs-string">"data"</span>: {
+  <span class="hljs-string">"id"</span>: <span class="hljs-number">70</span>,
+  <span class="hljs-string">"user_id"</span>: <span class="hljs-number">14</span>,
+  <span class="hljs-string">"order_no"</span>: <span class="hljs-string">"GBWJ3V1PE"</span>,
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"Octommerce"</span>,
+  <span class="hljs-string">"email"</span>: <span class="hljs-string">"octommerce@octommerce.com"</span>,
+  <span class="hljs-string">"phone"</span>: <span class="hljs-number">085813488273</span>,
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"null"</span>,
+  <span class="hljs-string">"subtotal"</span>: <span class="hljs-number">200000</span>,
+  <span class="hljs-string">"discount"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">"tax"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">"misc_fee"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-string">"total"</span>: <span class="hljs-number">200000</span>,
+  <span class="hljs-string">"is_same_address"</span>: <span class="hljs-string">"false"</span>,
+  <span class="hljs-string">"shipping_name"</span>: <span class="hljs-string">"octommerce"</span>,
+  <span class="hljs-string">"shipping_phone"</span>: <span class="hljs-number">085813488273</span>,
+  <span class="hljs-string">"shipping_company"</span>: <span class="hljs-string">"Octommerce"</span>,
+  <span class="hljs-string">"shipping_address"</span>: <span class="hljs-string">"street apron no 43"</span>,
+  <span class="hljs-string">"shipping_postcode"</span>: <span class="hljs-number">123123</span>,
+  <span class="hljs-string">"status_code"</span>: <span class="hljs-string">"waiting"</span>,
+  <span class="hljs-string">"status"</span>: {
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"waiting"</span>,
+    <span class="hljs-string">"color"</span>: <span class="hljs-string">"#f39c12"</span>,
+    <span class="hljs-string">"description"</span>: <span class="hljs-string">"waiting customer to pay. "</span>,
+    }
+  <span class="hljs-string">"status_update_at"</span>: <span class="hljs-number">2017</span>/<span class="hljs-number">05</span>/<span class="hljs-number">15</span> <span class="hljs-number">13</span>:<span class="hljs-number">41</span>:<span class="hljs-number">44</span>
+  <span class="hljs-string">"create_at"</span>: <span class="hljs-number">2017</span>/<span class="hljs-number">05</span>/<span class="hljs-number">15</span> <span class="hljs-number">13</span>:<span class="hljs-number">41</span>:<span class="hljs-number">44</span>
+  <span class="hljs-string">"invoice"</span>: {
+    <span class="hljs-string">"data"</span>: {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">51</span>,
+      <span class="hljs-string">"user_id"</span>: <span class="hljs-number">14</span>,
+      <span class="hljs-string">"subtotal"</span>: <span class="hljs-number">211</span>,
+      <span class="hljs-string">"discount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"tax"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"total"</span>: <span class="hljs-number">211</span>,
+      <span class="hljs-string">"hash"</span>: <span class="hljs-string">"9db47f74852a7b7156f91796fd844b3e"</span>,
+      <span class="hljs-string">"status_code"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-string">"status_updated_at"</span>: <span class="hljs-string">"2017-05-15 13:41:44"</span>,
+      <span class="hljs-string">"created_at"</span>: <span class="hljs-string">"2017-05-15 13:41:44"</span>
+    }
+  }
+}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="orders-order-single" class="resource"><h3 class="resource-heading">Order single <a href="#orders-order-single" class="permalink">&nbsp;&para;</a></h3><div id="orders-order-single-get" class="action get"><h4 class="action-heading"><div class="name">Get single Order</div><a href="#orders-order-single-get" class="method get">GET</a><code class="uri">/api/v1/orders/id</code></h4><p>Get a single of Order.</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.octommerce.com</span>/api/v1/orders/id</span></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">X-Request-ID</span>: <span class="hljs-string">f72fc914</span><br><span class="hljs-attribute">X-Response-Time</span>: <span class="hljs-string">4ms</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -1230,7 +1166,7 @@
 ]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 04 May 2017</p><script>/* eslint-env browser */
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 15 May 2017</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
