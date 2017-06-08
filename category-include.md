@@ -1,5 +1,6 @@
 # Data Structures
-## CategoryData
+
+## CategoryIncludeProducts
 + id: 1 (required, number) - Unique identifier
 + slug: Minuman
 + name: Minuman (required) - Single line description
@@ -7,9 +8,11 @@
 + images (ImageList)
 + color: null
 + keywords: roso roso
++ products (ProductInclude)
 
-## CategoryList (array)
-+ (CategoryData)
+
+## CategoryProduct (array)
++ (CategoryIncludeProducts)
 
 # Group Categories
 show categories data
@@ -25,6 +28,19 @@ show categories data
             X-Response-Time: 4ms
 
     + Attributes (CategoryList)
+
+## Categories Include Products [/api/v1/categories?include=products]
+### Get Categories Include Products relation [GET]
+
++ Response 200 (application/json)
+
+    + Headers
+
+            X-Request-ID: f72fc914
+            X-Response-Time: 4ms
+
+    + Attributes (CategoryProduct)
+
 ## Categories single [/api/v1/categories/id]
 ### Get single category [GET]
 Get a single of Categories.

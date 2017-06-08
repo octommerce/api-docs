@@ -1,25 +1,4 @@
 # Data Structures
-## OrderData
-+ id: 1 (required, number) - Unique identifier
-+ user_id: 2 (required, number) - Unique identifier
-+ order_no: F4C5JLDHT
-+ name: Octommerce (required) - Single line description
-+ email: octommerce@octommerce.com
-+ phone: 08887758271
-+ message: null
-+ subtotal: 24000 (required, number) - Unique identifier
-+ discount:  0 (required, number) - Unique identifier
-+ tax:  0 (required, number) - Unique identifier
-+ misc_fee:  0 (required, number) - Unique identifier
-+ total:  24000 (required, number) - Unique identifier
-+ status_code: waiting
-+ status_update_at(updateData)
-+ create_at: 2017/05/04 11:16:39
-+ invoices (invoiceList)
-+ update_at: 2017/05/04 11:16:39
-
-## OrderList (array)
-+ (OrderData)
 
 ## updateData
 + date: 2017/05/04 11:16:39.000000

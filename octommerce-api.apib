@@ -47,6 +47,106 @@ you can try this method with google crhome extension plugin [__POSTMAN__](https:
 ## ImageList (array)
 + (ImageData)
 
+## ProductData
++ id: 1 (required, number) - Unique identifier
++ sku: 123 (required, number) - Unique identifier
++ name: Kuku bima Energi (required) - Single line description
++ description: minuman berenergi roso roso - Full description of the note which supports Markdown.
++ price: 12000 (required, number) - Unique identifier
++ sale_price: null
++ images (ImageList)
+
+## ProductList (array)
++ (ProductData)
+
+## ProductInclude
++ data (ProductList)
+
+
+## CategoryData
++ id: 1 (required, number) - Unique identifier
++ slug: Minuman
++ name: Minuman (required) - Single line description
++ description: minuman berenergi roso roso - Full description of the note which supports Markdown.
++ images (ImageList)
++ color: null
++ keywords: roso roso
+
+## CategoryList (array)
++ (CategoryData)
+
+## ReviewData
++ id: 1 (required, number) - Unique identifier
++ product_id: 2 (required, number)
++ title: Mantap (required) - Single line description
++ content: hangat di tubuh - Full description of the note which supports Markdown.
++ rating : 1 (required, number)
++ is_buyer: 0 (required, number)
+
+## ReviewList (array)
++ (ReviewData)
+
+## BrandData
++ id: 1 (required, number) - Unique identifier
++ slug: Sidomuncul
++ name: Sidomuncul (required) - Single line description
++ description: minuman berenergi roso roso - Full description of the note which supports Markdown.
++ images (ImageList)
++ keywords: roso roso
+
+## BrandList (array)
++ (BrandData)
+
+## UserData
++ id: 1 (required, number) - Unique identifier
++ name: Octommerce (required) - Single line description
++ username: octommerce (required) - Single line description
++ email: octommerce@octommerce.com - Full description of the note which supports Markdown.
++ last_login: 2017/04/25 17:46:32
++ avatar: null,
++ address_count: 2 (required, number)
++ orders_count: 1 (required, number)
+
+## UserList (array)
++ (UserData)
+
+## OrderData
++ id: 1 (required, number) - Unique identifier
++ user_id: 2 (required, number) - Unique identifier
++ order_no: F4C5JLDHT
++ name: Octommerce (required) - Single line description
++ email: octommerce@octommerce.com
++ phone: 08887758271
++ message: null
++ subtotal: 24000 (required, number) - Unique identifier
++ discount:  0 (required, number) - Unique identifier
++ tax:  0 (required, number) - Unique identifier
++ misc_fee:  0 (required, number) - Unique identifier
++ total:  24000 (required, number) - Unique identifier
++ status_code: waiting
++ status_update_at(updateData)
++ create_at: 2017/05/04 11:16:39
++ invoices (invoiceList)
++ update_at: 2017/05/04 11:16:39
+
+## OrderList (array)
++ (OrderData)
+
+## AddressData
++ id: 1 (required, number) - Unique identifier
++ location_code: 32.17.07 (required) - Single line description
++ address_name: office (required) - Single line description
++ name: octommerce - Full description of the note which supports Markdown.
++ phone: 085813488273(required, number)
++ street: jalan tiga putra no 43,
++ latitude: 2.419259600000000176578396349214017391204833984375
++ longtitude: 99.5768417999999968515112414024770259857177734375 
++ is_primary: 1
+
+## AddressList (array)
++ (AddressData)
+
+
 <!-- include(product-include.md) --> 
 
 <!-- include(category-include.md) -->
