@@ -115,9 +115,48 @@ Get a single of products.
 
     + Attributes (ProductList)
 
-## Products Filter [/api/v1/products?filter%5Bcategory%5D=1]
-### filter products [GET]
+## Products Filter category [/api/v1/products?filter%5Bcategory%5D=1]
+### filter products cateogy [GET]
 Get a products filter by category.
+
++ Response 200 (application/json)
+
+      + Headers
+
+              X-Request-ID: f72fc914
+              X-Response-Time: 4ms
+
+      + Attributes (ProductList)
+
+## Products Filter lists [/api/v1/products?filter%5Blists%5D=1]
+### filter products list [GET]
+Get a products filter by lists.
+
++ Response 200 (application/json)
+
+      + Headers
+
+              X-Request-ID: f72fc914
+              X-Response-Time: 4ms
+
+      + Attributes (ProductList)
+
+## Products Filter search [/api/v1/products?filter%5Bsearch%5D=bima]
+### filter products search [GET]
+Get a products filter by search.
+
++ Response 200 (application/json)
+
+      + Headers
+
+              X-Request-ID: f72fc914
+              X-Response-Time: 4ms
+
+      + Attributes (ProductList)
+
+## Products Filter stock [/api/v1/products?filter%5Boutsock%5D=true]
+### filter products stock [GET]
+Get if value of parameter outstock is true, then it show just stock product is true.
 
 + Response 200 (application/json)
 
@@ -140,3 +179,17 @@ Get a products filter by category and brand.
               X-Response-Time: 4ms
 
       + Attributes (ProductData)
+
+## Products sort order [/api/v1/products?sort=name+desc]
+### show products by sort order [GET]
+show product by sort order, it can sort by:
+name, created_at, price, random, reordered and sales
+
++ Response 200 (application/json)
+
+      + Headers
+
+              X-Request-ID: f72fc914
+              X-Response-Time: 4ms
+
+      + Attributes (ProductList)
